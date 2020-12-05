@@ -16,6 +16,9 @@ class MainViewModel : ViewModel() {
     private val _testEntries = MutableLiveData<Resource<List<TestClass>>>()
     val testEntries : LiveData<Resource<List<TestClass>>> = _testEntries
 
+    private val _users = MutableLiveData<Resource<List<User>>>()
+    val users : LiveData<Resource<List<User>>> = _users
+
     fun getTestEntries() {
 
         viewModelScope.launch {
@@ -24,6 +27,10 @@ class MainViewModel : ViewModel() {
                     _testEntries.postValue(_result)
 
             }
+            repository.getUserDoc()
+                .collect{ _result ->
+                    _users.postValue(_result)
+                }
         }
 
     }

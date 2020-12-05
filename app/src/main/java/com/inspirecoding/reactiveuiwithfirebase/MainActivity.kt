@@ -27,7 +27,45 @@ class MainActivity : AppCompatActivity() {
 
 
         viewModel.getTestEntries()
+
         setupTestFirebaseObserver()
+        setupUserFirebaseObserver()
+    }
+
+    private fun setupUserFirebaseObserver() {
+
+        viewModel.users.observe(this, Observer { _result ->
+
+            when (_result.status) {
+                Status.LOADING -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                Status.SUCCESS -> {
+                    var text = ""
+                    _result._data?.forEach {
+                        it.username.let {
+                            Log.d(TAG, it)
+                            text += "$it\n"
+                        }
+                    }
+
+                    binding.tvUsers.text = text
+                    binding.progressBar.visibility = View.GONE
+                }
+                Status.ERROR -> {
+                    _result.message?.let { message ->
+                        Snackbar.make(
+                            binding.rootView,
+                            message, Snackbar.LENGTH_LONG
+                        ).show()
+                        Log.e(TAG, message)
+                    }
+                    binding.progressBar.visibility = View.GONE
+                }
+            }
+
+        })
+
     }
 
     private fun setupTestFirebaseObserver() {
