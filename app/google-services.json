@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "94741129126",
+    "project_id": "reactiveuiwithfirebase",
+    "storage_bucket": "reactiveuiwithfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94741129126:android:708f3f5b71942b67b71167",
+        "android_client_info": {
+          "package_name": "com.inspirecoding.reactiveuiwithfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94741129126-t8c7vt1dtl4abcgrptgvfohm6kr3gqlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfOMb8zTyaJSOLi6uCL7yLV66R4SKrBxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94741129126-t8c7vt1dtl4abcgrptgvfohm6kr3gqlf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
